@@ -1,8 +1,9 @@
 import { AwesomeQRCode } from '@awesomeqr/react';
 import { Tab } from '@headlessui/react';
+import clsx from 'clsx';
 import { FC, useCallback, useState } from 'react';
 import { QRCodeGeneratorText } from '../components/QRCodeGeneratorText';
-import { classNames } from '../utils/class-names';
+import { QRCodeGeneratorWifi } from '../components/QRCodeGeneratorWifi';
 
 const QRCodeTypes: Array<{
   label: string;
@@ -11,6 +12,10 @@ const QRCodeTypes: Array<{
   {
     label: 'Text',
     component: QRCodeGeneratorText,
+  },
+  {
+    label: 'WiFi',
+    component: QRCodeGeneratorWifi,
   },
 ];
 
@@ -27,11 +32,11 @@ export default function Index() {
               <Tab
                 key={label}
                 className={({ selected }) =>
-                  classNames(
+                  clsx(
                     'w-full py-2.5 text-sm leading-5 font-medium rounded-lg',
                     selected
                       ? 'bg-white shadow'
-                      : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                      : 'bg-white/[0.5] text-slate-500'
                   )
                 }
               >

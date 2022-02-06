@@ -5,6 +5,7 @@ export const QRCodeForm: FC<{ onSubmit: () => void }> = ({
   children,
 }) => (
   <form
+    autoComplete="off"
     onSubmit={e => {
       e.preventDefault();
       onSubmit();

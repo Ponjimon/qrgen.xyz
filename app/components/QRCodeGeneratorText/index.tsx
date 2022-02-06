@@ -15,7 +15,7 @@ export const QRCodeGeneratorText: FC<{ onSubmit: (value: string) => void }> = ({
         value={text}
         onChange={e => setText(e.target.value)}
       />
-      <Button className="w-full mt-2">Submit</Button>
+      <Button className="w-full mt-2">Generate</Button>
     </QRCodeForm>
   );
 };
